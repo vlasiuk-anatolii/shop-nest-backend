@@ -75,4 +75,9 @@ export class ProductsController {
   async getProduct(@Param('productId') productId: string) {
     return this.productsService.getProduct(+productId);
   }
+
+  @Post('delete')
+  async deleteProduct(@Body() body: { id: string }) {
+    return this.productsService.deleteProduct(body.id);
+  }
 }
