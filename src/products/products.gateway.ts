@@ -9,6 +9,8 @@ import { AuthService } from 'src/auth/auth.service';
 @WebSocketGateway({
   cors: {
     origin: '*',
+    path: '/socket.io',
+    transports: ['polling', 'websocket'],
   },
 })
 export class ProductsGateway {
